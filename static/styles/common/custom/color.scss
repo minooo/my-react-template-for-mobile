@@ -1,0 +1,61 @@
+// 公用的颜色样式
+// 字体色
+// 网站基础颜色
+$color-list: (
+  main: #45c2c8,
+  second: #ffaa19,
+  border: #e5e5e5,
+  smoke: #f3f3f3,
+  white: #fff
+);
+@each $key, $val in $color-list {
+  .c-#{$key} {
+    color: $val;
+  }
+  .bg-#{$key} {
+    background-color: $val;
+  }
+}
+
+.c000 {
+  color: #000;
+}
+.c666 {
+  color: #666;
+}
+.c999 {
+  color: #c999;
+}
+
+.box {
+  max-width: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.border-bottom-one {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.border-right {
+  border-right: 1px solid #e5e5e5;
+}
+
+input::placeholder {
+  color: #999!important;
+}
+
+a:hover {
+  color: #45c2c8;
+}

@@ -1,0 +1,86 @@
+// scss 语法参考 http://www.w3cplus.com/sassguide/syntax.html
+
+// 公用的间距样式
+// 通用的padding margin值 从0.05rem到0.3rem 步进为5
+@for $i from 1 through 6 {
+  .ptb#{$i * 5}, .pt#{$i * 5} {
+      padding-top: $i * 5 * 0.01rem
+  }
+  .ptb#{$i * 5}, .pb#{$i * 5} {
+      padding-bottom: $i * 5 * 0.01rem;
+  }
+  .plr#{$i * 5}, .pl#{$i * 5} {
+      padding-left: $i * 5 * 0.01rem;
+  }
+  .plr#{$i * 5}, .pr#{$i * 5} {
+      padding-right: $i * 5 * 0.01rem;
+  }
+  .mt#{$i * 5} {
+      margin-top: $i * 5 * 0.01rem;
+  }
+  .mb#{$i * 5} {
+      margin-bottom: $i * 5 * 0.01rem;
+  }
+  .ml#{$i * 5} {
+      margin-left: $i * 5 * 0.01rem;
+  }
+  .mr#{$i * 5} {
+      margin-right: $i * 5 * 0.01rem;
+  }
+}
+
+// 通用的字体大小
+.font20 {
+  font-size: 0.2rem
+}
+.font24 {
+  font-size: 0.24rem
+}
+.font28 {
+  font-size: 0.28rem
+}
+.font30 {
+  font-size: 0.3rem
+}
+.font34 {
+  font-size: 0.34rem
+}
+.font40 {
+  font-size: 0.4rem
+}
+.font44 {
+  font-size: 0.44rem
+}
+.font60 {
+  font-size: 0.6rem
+}
+
+// 宽度，高度
+.h108 {
+  height: 1.08rem;
+}
+.w-100 {
+    width: 100%;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.h-full {
+    height: 100vh;
+}
+
+// radius，从0.02rem 到 0.12rem, 步进为 0.02
+.r10 {
+  border-radius: 0.1rem;
+}
+.r30 {
+  border-radius: 0.3rem;
+}
+.r100 {
+  border-radius: 1rem;
+}
+.circle {
+  border-radius: 50%;
+}

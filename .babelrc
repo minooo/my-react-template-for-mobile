@@ -1,0 +1,27 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    "transform-decorators-legacy",
+    ["import", { "libraryName": "antd-mobile" }],
+    [
+      "transform-runtime",
+      {
+        "helpers": false,
+        "polyfill": true,
+        "regenerator": true,
+        "moduleName": "babel-runtime"
+      }
+    ],
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@components": "./components/index.js",
+          "@utils": "./utils/index.js",
+          "@actions": "./store/actions/index.js",
+          "@store": "./store/withRedux.js"
+        }
+      }
+    ]
+  ]
+}
