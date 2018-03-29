@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { getUsers } from "@actions";
 import withRedux from "@store";
-import { Layout, Nav } from "@components"
+import { Layout, Nav, WrapLink } from "@components"
 
 @withRedux
 export default class extends Component {
@@ -23,7 +23,12 @@ export default class extends Component {
   render() {
     return (
       <Layout title="嘟嘟新媒体-首页">
-        <div className="equal">234</div>
+        <div className="equal">
+          <WrapLink href="/" as="" className="h70 flex ai-center plr20 bg-smoke  ">
+            <i className="i-search font30 c999 mr10" />
+            <span>搜个关键词试试看</span>
+          </WrapLink>
+        </div>
         <Nav />
       </Layout>
     )

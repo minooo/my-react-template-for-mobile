@@ -55,10 +55,16 @@
   font-size: 0.6rem
 }
 
-// 宽度，高度
-.h108 {
-  height: 1.08rem;
+// 宽高，从0.2rem 到 1.2rem, 步进为2px
+@for $i from 10 through 60 {
+  .h#{$i * 2} {
+      height: $i * 2 * 0.01rem;
+  }
+  .w#{$i * 2} {
+      width: $i * 2 * 0.01rem;
+  }
 }
+
 .w-100 {
     width: 100%;
 }

@@ -2,8 +2,6 @@ const next = require("next");
 const Koa = require("koa");
 const router = require("koa-route");
 const LRUCache = require("lru-cache");
-const c2k = require("koa2-connect");
-const proxyMiddleware = require("http-proxy-middleware");
 
 const port = parseInt(process.env.PORT, 10) || 9527;
 const dev = process.env.NODE_ENV !== "production";
@@ -71,22 +69,6 @@ app.prepare().then(() => {
   server.use(router.get("/buy", ctx => renderAndCache(ctx, "/1-buy/1-home")));
   server.use(router.get("/find", ctx => renderAndCache(ctx, "/1-find/1-home")));
   server.use(router.get("/my", ctx => renderAndCache(ctx, "/1-my/1-home")));
-
-  if (dev) {
-    // Set up the proxy.
-    server.use(async (ctx, next) => {
-      router.get(
-        "*",
-        c2k(
-          proxyMiddleware("/api", {
-            target: "https://api.github.com",
-            pathRewrite: { "^/api": "/" },
-            changeOrigin: true
-          })
-        )(ctx, next)
-      );
-    });
-  }
 
   server.use(async ctx => {
     await handle(ctx.req, ctx.res);

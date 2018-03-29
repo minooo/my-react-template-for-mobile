@@ -20,7 +20,7 @@ export default class extends PureComponent {
   };
 
   render() {
-    const { href, children, as, ...rest } = this.props;
+    const { href, as, children, ...rest } = this.props;
     if (isLink(href)) {
       return (
         <Link href={href} as={as}>

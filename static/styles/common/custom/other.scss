@@ -52,11 +52,13 @@
 .overflow-y {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  transform: translate3d(0, 0, 0);
 }
 
 .overflow-x {
   overflow-x: scroll;
   -webkit-overflow-scrolling: touch;
+  transform: translate3d(0, 0, 0);
 }
 
 .full-height {
